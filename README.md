@@ -7,10 +7,10 @@ For a more list of scopes, see: https://www.sublimetext.com/docs/3/scope_naming.
 Files should have a .note or .notes extension. Place this file \Packages\User\ directory,
 on windows it is located in C\users\<you>\AppData\Roaming\Sublime Text 3\
 
-#### Section highlighting (case sensitive) in green by default
+#### Section highlighting (case sensitive)
   - `;;`
 
-#### Important words (case sensitive) in pink by default
+#### Important words (case sensitive)
   - `Note`
   - `NOTE`
   - `Notes`
@@ -18,13 +18,13 @@ on windows it is located in C\users\<you>\AppData\Roaming\Sublime Text 3\
   - `Recall`
   - `RECALL`
 
-#### Grey "Comment-esque" line that blends in by default
+#### Comment line
   - `==` <stuff>
 
-#### Emphasized Line that is in blue italics by default
+#### Emphasized Line
   - `>`
  
-#### Inline Equation yellow/tan line with equalities/etc as purple. Note it uses the grave key, `
+#### Inline Equation line with common equivalence symbols marked
  - `` `<stuff>` ``
 
 
@@ -32,6 +32,6 @@ on windows it is located in C\users\<you>\AppData\Roaming\Sublime Text 3\
  - `!!! <stuff>`
 
 #### Special case highlighted words (case sensitive)
- - `FILL`                  pink by default
- - `POPULATE`              pink by default 
- - `Section`               green by default
+ - `FILL`
+ - `POPULATE`
+ - `Section`
