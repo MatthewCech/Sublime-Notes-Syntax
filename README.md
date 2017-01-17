@@ -8,30 +8,30 @@ Files should have a .note or .notes extension. Place this file \Packages\User\ d
 on windows it is located in C\users\<you>\AppData\Roaming\Sublime Text 3\
 
 #### Section highlighting (case sensitive) in green by default
-  - ;;
+  - `;;`
 
 #### Important words (case sensitive) in pink by default
-  - Note
-  - NOTE
-  - Notes
-  - NOTES
-  - Recall
-  - RECALL
+  - `Note`
+  - `NOTE`
+  - `Notes`
+  - `NOTES`
+  - `Recall`
+  - `RECALL`
 
 #### Grey "Comment-esque" line that blends in by default
-  - == <stuff>
+  - `==` <stuff>
 
 #### Emphasized Line that is in blue italics by default
-  - >
+  - `>`
  
 #### Inline Equation yellow/tan line with equalities/etc as purple. Note it uses the grave key, `
- - ` <stuff> `
+ - `` `<stuff>` ``
 
 
 #### Highlighted line
- - !!! <stuff>
+ - `!!! <stuff>`
 
 #### Special case highlighted words (case sensitive)
- - FILL                  pink by default
- - POPULATE              pink by default 
- - Section               green by default
+ - `FILL`                  pink by default
+ - `POPULATE`              pink by default 
+ - `Section`               green by default
