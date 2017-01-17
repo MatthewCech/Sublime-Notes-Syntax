@@ -1,0 +1,86 @@
+%YAML 1.2
+---
+# (Slapped together feebly by RW)
+# See general overview http://www.sublimetext.com/docs/3/syntax.html
+# For a more list of scopes, see: https://www.sublimetext.com/docs/3/scope_naming.html
+#
+# Files should have a .note or .notes extension. Place this file \Packages\User\ directory,
+# on windows it is located in C\users\<you>\AppData\Roaming\Sublime Text 3\
+#
+# Section highlighting (case sensitive) in green by default
+#   ::
+#
+# Important words (case sensitive) in pink by default
+#   Note
+#   Notes
+#   Recall
+# 
+# Grey "Comment-esque" line that blends in by default
+#   == <stuff>
+#
+# Emphasized Line that is in blue italics by default
+#   >
+# 
+# Inline Equation yellow/tan line with equalities/etc as purple
+#  ` <stuff> `
+#
+#
+# Hella highlighted line
+#  !!! <stuff>
+#
+#
+# Special case highlighted words (case sensitive)
+#  FILL                  pink by default
+#  POPULATE              pink by default 
+#  Section               green by default
+
+
+name: Notes
+file_extensions: [notes, note]
+scope: source.notes
+
+contexts:
+  main:
+    # Keep tabs on the "Note" words, use like keywords based on C style highlighting
+    # ToDo: get scope to include the semicolon?
+    - match: \b(Notes|Note|Recall|NOTE|NOTES|RECALL)\b # Btw this is just REGEX here
+      scope: keyword.control.c
+      
+    # list item bullets. Steal from generic attribute name beause Greeeeeeen
+    - match: \;;.*$
+      scope: entity.other.attribute-name
+    - match: \b(Section|Sections)\b
+      scope: entity.other.attribute-name
+
+    # Header padding
+    - match: \==.*
+      scope:  comment
+    
+    # Very alarming and bright text indicating we need to pay attention it 
+    - match: \FILL|\POPULATE|\!!!.*$
+      scope: invalid
+    
+    # Emphasis blue hilighted style comments, steal that formatting from sass
+    - comment: C++-style single line comment
+      match: \>.*$
+      scope: storage.type # support.type.property-name.css.sass #chosen from a magical list on this page: https://packagecontrol.io/packages/Syntax%20Highlighting%20for%20Sass
+  
+      # Hijack the string syntax highlighting for equations and stuff inline.
+    - match: '`' #beginning of string
+      push: string #push status (?)
+  string:
+
+    # for if I want to change the color of common operators and fuctions. 
+    - match: \PI|tan|sin|cos|log|atan|asin|acos
+      scope:  string.quoted.double.c
+
+    - meta_scope: string.quoted.double.c #steal string, fam.
+    - match: '`'
+      pop: true
+
+    # mark inline escape character sequence and use it for equality or therefore, 
+    # in this case I care about equals because it breaks it up
+    - match: \=.|\->|\<=|\>=|\~=|\~~|\!=
+      scope: constant.character.escape.c
+
+
